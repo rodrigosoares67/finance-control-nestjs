@@ -27,7 +27,7 @@ export class LancamentosController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.lancamentosService.findOne(+id);
+    return this.lancamentosService.findOne(id);
   }
 
   @Patch(':id')
@@ -35,11 +35,11 @@ export class LancamentosController {
     @Param('id') id: string,
     @Body() updateLancamentoDto: UpdateLancamentoDto,
   ) {
-    return this.lancamentosService.update(+id, updateLancamentoDto);
+    return this.lancamentosService.update(id, updateLancamentoDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.lancamentosService.remove(+id);
+    return this.lancamentosService.remove(id);
   }
 }

@@ -18,14 +18,14 @@ export class LancamentosService {
   }
 
   findAll() {
-    return this.lancamentoModel.find();
+    return this.lancamentoModel.find().populate('conta');
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return this.lancamentoModel.findById(id);
   }
 
-  update(id: number, updateLancamentoDto: UpdateLancamentoDto) {
+  update(id: string, updateLancamentoDto: UpdateLancamentoDto) {
     return this.lancamentoModel.findByIdAndUpdate(
       {
         _id: id,
@@ -39,7 +39,7 @@ export class LancamentosService {
     );
   }
 
-  remove(id: number) {
+  remove(id: string) {
     return this.lancamentoModel
       .deleteOne({
         _id: id,

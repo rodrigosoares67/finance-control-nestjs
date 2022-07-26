@@ -1,4 +1,5 @@
 export class CreateLancamentoDto {
+  data: Date;
   nome: string;
   descricao: string;
   tipo: 'RECEITA' | 'DESPESA';

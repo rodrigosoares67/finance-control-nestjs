@@ -7,6 +7,9 @@ export type LancamentoDocument = Lancamento & Document;
 
 @Schema()
 export class Lancamento {
+  @Prop({ required: true, default: Date.now })
+  data: Date;
+
   @Prop({ required: true })
   nome: string;
 
